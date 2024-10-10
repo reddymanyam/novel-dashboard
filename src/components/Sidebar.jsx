@@ -18,7 +18,7 @@ import styled from '@emotion/styled';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import logo from '../assets/novellogo.jpeg';
-import LocalParkingIcon from '@mui/icons-material/LocalParking';
+import LocalParkingRoundedIcon from '@mui/icons-material/LocalParkingRounded';
 export default function Sidebar() {
   const [open, setOpen] = React.useState(true);
 
@@ -38,7 +38,7 @@ export default function Sidebar() {
     objectFit:"cover"
   })
   return (
-    <Box width="100%" padding="10px">
+    <Box width="100%" padding="10px" overflowX="scroll">
 
     <Box display="flex" justifyContent="space-between" alignItems="center" padding="5px">
          <CustomImage src={logo}  alt='novel logo'/>
@@ -105,11 +105,11 @@ export default function Sidebar() {
       </ListItemButton>
         </List>
         <Box  width="100%" >
-            <h5 style={{marginLeft:"15px"}}>UPCOMING</h5>
+            <h5 style={{marginLeft:"15px", marginTop:"15px"}}>UPCOMING</h5>
             <List>
             <ListItemButton>
         <CustomListIcon>
-          <LocalParkingIcon />
+          <LocalParkingRoundedIcon />
         </CustomListIcon>
         <ListItemText primary="Visitor Parking Pass" />
       </ListItemButton>
