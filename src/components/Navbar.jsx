@@ -1,9 +1,10 @@
 import React from 'react'
+// import logo from '../assets/novellogo.jpeg';
 
 const Navbar = () => {
   return (
     <>
-        <h2>NOVEL OFFICE</h2>
+
     </>
   )
 }

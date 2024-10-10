@@ -15,7 +15,10 @@ import AirplaneTicketOutlinedIcon from '@mui/icons-material/AirplaneTicketOutlin
 import PrintOutlinedIcon from '@mui/icons-material/PrintOutlined';
 import DonutSmallOutlinedIcon from '@mui/icons-material/DonutSmallOutlined';
 import styled from '@emotion/styled';
-
+import { Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import logo from '../assets/novellogo.jpeg';
+import LocalParkingIcon from '@mui/icons-material/LocalParking';
 export default function Sidebar() {
   const [open, setOpen] = React.useState(true);
 
@@ -26,12 +29,25 @@ export default function Sidebar() {
   const CustomListIcon = styled(ListItemIcon)({
     minWidth : "40px"
   })
-
+  
+  const CustomImage = styled('img')({
+    width:'35px',
+    height:"35px",
+    borderRadius:"50%",
+    marginLeft:'5px',
+    objectFit:"cover"
+  })
   return (
+    <Box width="100%" padding="10px">
+
+    <Box display="flex" justifyContent="space-between" alignItems="center" padding="5px">
+         <CustomImage src={logo}  alt='novel logo'/>
+        <Typography variant="h6" component="h2" fontWeight="bold"> NOVEL OFFICE</Typography>
+    </Box>
     <List
-      sx={{ width: '100%'}}
-      component="nav"
-      aria-labelledby="nested-list-subheader"
+    sx={{ width: '100%'}}
+    component="nav"
+    aria-labelledby="nested-list-subheader"
     >
       
       <ListItemButton onClick={handleClick}>
@@ -88,6 +104,18 @@ export default function Sidebar() {
         <ListItemText primary="Expansion/Downsize" />
       </ListItemButton>
         </List>
+        <Box  width="100%" >
+            <h5 style={{marginLeft:"15px"}}>UPCOMING</h5>
+            <List>
+            <ListItemButton>
+        <CustomListIcon>
+          <LocalParkingIcon />
+        </CustomListIcon>
+        <ListItemText primary="Visitor Parking Pass" />
+      </ListItemButton>
+            </List>
+        </Box>
+   </Box>
    
   );
 }
