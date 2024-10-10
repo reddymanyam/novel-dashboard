@@ -19,8 +19,8 @@ const Navbar = () => {
    <Box width="100%" display='flex' justifyContent="space-between" alignItems="center" padding="10px 20px">
        <ReorderIcon />
        <Box display="flex" justifyContent="flex-end" alignItems="center">
-        <HelpOutlineOutlinedIcon  sx={{paddingRight:"15px"}}/>
-        <NotificationsActiveOutlinedIcon sx={{paddingRight:"15px"}} />
+        <HelpOutlineOutlinedIcon  sx={{marginRight:"15px"}}/>
+        <NotificationsActiveOutlinedIcon sx={{marginRight:"15px"}} />
         <CustomImage src={profilepic} alt='profilepc' />
        </Box>
    </Box>

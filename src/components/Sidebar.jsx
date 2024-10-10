@@ -38,7 +38,7 @@ export default function Sidebar() {
     objectFit:"cover"
   })
   return (
-    <Box width="100%" padding="10px" overflowX="scroll">
+    <Box width="100%" padding="10px" overflowx="scroll">
 
     <Box display="flex" justifyContent="space-between" alignItems="center" padding="5px">
          <CustomImage src={logo}  alt='novel logo'/>
