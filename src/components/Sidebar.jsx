@@ -1,16 +1,20 @@
 import * as React from 'react';
-import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
+import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
+import BookOnlineOutlinedIcon from '@mui/icons-material/BookOnlineOutlined';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import EmojiTransportationOutlinedIcon from '@mui/icons-material/EmojiTransportationOutlined';
+import AirplaneTicketOutlinedIcon from '@mui/icons-material/AirplaneTicketOutlined';
+import PrintOutlinedIcon from '@mui/icons-material/PrintOutlined';
+import DonutSmallOutlinedIcon from '@mui/icons-material/DonutSmallOutlined';
+import styled from '@emotion/styled';
 
 export default function Sidebar() {
   const [open, setOpen] = React.useState(true);
@@ -18,6 +22,10 @@ export default function Sidebar() {
   const handleClick = () => {
     setOpen(!open);
   };
+  
+  const CustomListIcon = styled(ListItemIcon)({
+    minWidth : "40px"
+  })
 
   return (
     <List
@@ -27,60 +35,59 @@ export default function Sidebar() {
     >
       
       <ListItemButton onClick={handleClick}>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
+        <CustomListIcon>
+          <DashboardOutlinedIcon />
+        </CustomListIcon>
         <ListItemText primary="Dashboard" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
+            <CustomListIcon>
               <StarBorder />
-            </ListItemIcon>
+            </CustomListIcon>
             <ListItemText primary="Starred" />
           </ListItemButton>
           </List>
           </Collapse>
           <ListItemButton>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
+        <CustomListIcon>
+          <BookOnlineOutlinedIcon />
+        </CustomListIcon>
         <ListItemText primary="Tickets" />
       </ListItemButton>
       <ListItemButton>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
+        <CustomListIcon>
+          <DescriptionOutlinedIcon />
+        </CustomListIcon>
         <ListItemText primary="Invoices" />
       </ListItemButton>
       <ListItemButton>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
+        <CustomListIcon>
+          <AirplaneTicketOutlinedIcon />
+        </CustomListIcon>
         <ListItemText primary="Bookings" />
       </ListItemButton>
       <ListItemButton>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
+        <CustomListIcon>
+          <EmojiTransportationOutlinedIcon />
+        </CustomListIcon>
         <ListItemText primary="GatePass" />
       </ListItemButton>
       <ListItemButton>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
+        <CustomListIcon>
+          <PrintOutlinedIcon />
+        </CustomListIcon>
         <ListItemText primary="PrintRequest" />
       </ListItemButton>
       <ListItemButton>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
+        <CustomListIcon>
+          <DonutSmallOutlinedIcon />
+        </CustomListIcon>
         <ListItemText primary="Expansion/Downsize" />
       </ListItemButton>
         </List>
-      
    
   );
 }

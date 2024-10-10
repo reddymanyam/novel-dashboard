@@ -8,13 +8,13 @@ const Layout = () => {
   return (
     <>
         <Box display="flex" width="100%" height="100vh">
-            <Box width="100%" height="30px" position="fixed" display='flex' justifyContent="flex-start" bgcolor="white">
+            <Box width="100%" height="35px" position="fixed" display='flex' justifyContent="flex-start" bgcolor="white">
                 <Navbar />
             </Box>
-            <Box display='flex' justifyContent="center" aliginItems="center" height="calc(100% - 30px)" width="175px" position='fixed' bgcolor="lightblue" top="30px">
+            <Box display='flex' justifyContent="center" aliginItems="center" height="calc(100% - 35px)" width="210px" position='fixed' bgcolor="lightblue" top="35px">
                 <Sidebar />
             </Box>
-            <Box display='flex' justifyContent="center" aliginItems="center" overflow="auto" width='calc(100% - 175px)' height="calc(100% - 30px)"  padding="30px"  marginLeft="175px" top="30px">
+            <Box display='flex' justifyContent="center" aliginItems="center" overflow="auto" width='calc(100% - 210px)' height="calc(100% - 35px)"  padding="30px"  marginLeft="210px" top="35px">
                 <Outlet />
             </Box>
         </Box>
