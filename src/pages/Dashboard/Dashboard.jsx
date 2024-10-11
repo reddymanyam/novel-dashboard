@@ -15,6 +15,18 @@ import queensroad from '../../assets/Frame 1000002926 (3).png';
 import kudluroad from '../../assets/Frame 1000002926.png';
 import img1 from '../../assets/img.png';
 import img2 from '../../assets/img (1).png';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import CardActionArea from '@mui/material/CardActionArea';
+
+const CustomCard = styled(Card)({
+  borderRadius: "15px",
+  backgroundColor: "#e8f6ff"
+});
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
   ...theme.typography.body2,
@@ -43,7 +55,7 @@ const CustomImage1 = styled('img')({
 const CustomItem = styled(Item)({
   backgroundColor: "#e8f6ff", height: "200px", borderRadius: "15px"
 })
-export default function FullWidthGrid() {
+export default function Dashboard() {
   return (
     <Stack sx={{ flexGrow: 1, width: "100%", padding: "30px"}}>
       <Grid container spacing={2} >
@@ -66,21 +78,30 @@ export default function FullWidthGrid() {
       </Grid>
       <Typography variant="h6" component="h2">Featured listings</Typography>
     
-      <Stack >
+      <Stack width="100%">
         <Grid container spacing={2} >
           <Grid size={{ xs: 6, md: 4 }} >
-            <CustomItem>
+            <CustomItem sx={{position:"relative"}}>
             <CustomImage1 src={adugodi} alt='person'  />
+            <Box position="absolute" color="white" backgroundColor="rgba(0, 0, 0, 0.5)" borderRadius={3} bottom={29} left={20} >
+            <Typography variant='h6' component="h6" >Novel Business Park - Adugodi </Typography>
+            <Typography variant='h6' component="h6" ><LocationOnOutlinedIcon /> Adugodi, Bangaluru</Typography>
+            </Box>
             </CustomItem>
           </Grid>
           <Grid size={{ xs: 6, md: 4 }} >
             <CustomItem >
+              
             <CustomImage1 src={whitefield} alt='person'  />
+            <Typography variant='h6' component="h6">Novel Business Park - Adugodi</Typography>
+            <Typography variant='h6' component="h6">Adugodi, Bangaluru</Typography>
             </CustomItem>
           </Grid>
           <Grid size={{ xs: 6, md: 4 }} >
             <CustomItem >
             <CustomImage1 src={mgroad} alt='person'  />
+            <Typography variant='h6' component="h6">Novel Business Park - Adugodi</Typography>
+            <Typography variant='h6' component="h6">Adugodi, Bangaluru</Typography>
             </CustomItem>
           </Grid>
           <Grid size={{ xs: 6, md: 4 }} >
