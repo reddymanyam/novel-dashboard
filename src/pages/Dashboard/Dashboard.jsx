@@ -13,7 +13,8 @@ import mgroad from '../../assets/Frame 1000002926 (1).png';
 import marthalli from '../../assets/Frame 1000002924.png';
 import queensroad from '../../assets/Frame 1000002926 (3).png';
 import kudluroad from '../../assets/Frame 1000002926.png';
-
+import img1 from '../../assets/img.png';
+import img2 from '../../assets/img (1).png';
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
   ...theme.typography.body2,
@@ -44,7 +45,7 @@ const CustomItem = styled(Item)({
 })
 export default function FullWidthGrid() {
   return (
-    <Stack sx={{ flexGrow: 1, width: "100%", padding: "30px" }}>
+    <Stack sx={{ flexGrow: 1, width: "100%", padding: "30px"}}>
       <Grid container spacing={2} >
         <Grid size={{ xs: 12, md: 12 }} >
           <Item sx={{ bgcolor: "#e8f6ff", height: "60px", display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
@@ -97,10 +98,23 @@ export default function FullWidthGrid() {
             <CustomImage1 src={kudluroad} alt='person'  />
             </CustomItem>
           </Grid>
-
         </Grid>
-      </Stack>
-
+      </Stack >
+         <Typography variant='h6' component="h2" > Events</Typography>
+         <Stack >
+        <Grid container spacing={2} marginBottom={3}>
+          <Grid size={{ xs: 12, md: 6 }} >
+            <CustomItem>
+            <CustomImage1 src={img1} alt='person'  />
+            </CustomItem>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }} >
+            <CustomItem >
+            <CustomImage1 src={img2} alt='person'  />
+            </CustomItem>
+          </Grid>
+          </Grid>
+          </Stack>
     </Stack>
   );
 }
