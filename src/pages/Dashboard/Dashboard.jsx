@@ -16,22 +16,15 @@ import kudluroad from '../../assets/Frame 1000002926.png';
 import img1 from '../../assets/img.png';
 import img2 from '../../assets/img (1).png';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import CardActionArea from '@mui/material/CardActionArea';
 
-const CustomCard = styled(Card)({
-  borderRadius: "15px",
-  backgroundColor: "#e8f6ff"
-});
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: 'center',
+  position:'relative',
+  padding:"0px",
   color: theme.palette.text.secondary,
   ...theme.applyStyles('dark', {
     backgroundColor: '#1A2027',
@@ -81,11 +74,11 @@ export default function Dashboard() {
       <Stack width="100%">
         <Grid container spacing={2} >
           <Grid size={{ xs: 6, md: 4 }} >
-            <CustomItem sx={{position:"relative"}}>
+            <CustomItem>
             <CustomImage1 src={adugodi} alt='person'  />
-            <Box position="absolute" color="white" backgroundColor="rgba(0, 0, 0, 0.5)" borderRadius={3} bottom={29} left={20} >
-            <Typography variant='h6' component="h6" >Novel Business Park - Adugodi </Typography>
-            <Typography variant='h6' component="h6" ><LocationOnOutlinedIcon /> Adugodi, Bangaluru</Typography>
+            <Box position="absolute" color="white" backgroundColor="rgba(0, 0, 0, 0.5)" borderRadius={3} bottom={29} left={20}>
+            <Typography variant='h6' component="h6" sx={{fontSize:"0.9rem"}}>Novel Business Park - Adugodi </Typography>
+            <Typography variant='h6' component="h6" sx={{fontSize:"0.9rem"}} ><LocationOnOutlinedIcon sx={{fontSize:"1rem"}} /> Adugodi, Bangaluru</Typography>
             </Box>
             </CustomItem>
           </Grid>
