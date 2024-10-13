@@ -19,103 +19,148 @@ import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import logo from '../assets/novellogo.jpeg';
 import LocalParkingRoundedIcon from '@mui/icons-material/LocalParkingRounded';
+
+const CustomListIcon = styled(ListItemIcon)({
+  minWidth: "40px"
+});
+
+const CustomImage = styled('img')({
+  width: '35px',
+  height: "35px",
+  borderRadius: "50%",
+  marginLeft: '5px',
+  objectFit: "cover"
+});
+
 export default function Sidebar() {
   const [open, setOpen] = React.useState(true);
+  const [selectedIndex, setSelectedIndex] = React.useState(null);
 
   const handleClick = () => {
     setOpen(!open);
   };
-  
-  const CustomListIcon = styled(ListItemIcon)({
-    minWidth : "40px"
-  })
-  
-  const CustomImage = styled('img')({
-    width:'35px',
-    height:"35px",
-    borderRadius:"50%",
-    marginLeft:'5px',
-    objectFit:"cover"
-  })
+
+  const handleListItemClick = (index) => {
+    setSelectedIndex(index);
+  };
+
   return (
     <Box width="100%" padding="10px" overflowx="scroll">
-
-    <Box display="flex" justifyContent="space-between" alignItems="center" padding="5px">
-         <CustomImage src={logo}  alt='novel logo'/>
+      <Box display="flex" justifyContent="space-between" alignItems="center" padding="5px">
+        <CustomImage src={logo} alt='novel logo' />
         <Typography variant="h6" component="h2" fontWeight="bold"> NOVEL OFFICE</Typography>
-    </Box>
-    <List
-    sx={{ width: '100%'}}
-    component="nav"
-    aria-labelledby="nested-list-subheader"
-    >
-      
-      <ListItemButton onClick={handleClick}>
-        <CustomListIcon>
-          <DashboardOutlinedIcon />
-        </CustomListIcon>
-        <ListItemText primary="Dashboard" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 4 }}>
-            <CustomListIcon>
-              <StarBorder />
-            </CustomListIcon>
-            <ListItemText primary="Starred" />
-          </ListItemButton>
+      </Box>
+      <List
+        sx={{ width: '100%' ,marginLeft:"10px"}}
+        component="nav"
+        aria-labelledby="nested-list-subheader"
+      >
+        <ListItemButton onClick={handleClick}>
+          <CustomListIcon >
+            <DashboardOutlinedIcon />
+          </CustomListIcon>
+          <ListItemText primary="Dashboard" />
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </ListItemButton>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItemButton
+              sx={{ pl: 4 }}
+              onClick={() => handleListItemClick(1)}
+              style={{
+                backgroundColor: selectedIndex === 1 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+              }}
+            >
+              <CustomListIcon>
+                <StarBorder />
+              </CustomListIcon>
+              <ListItemText primary="Starred" />
+            </ListItemButton>
           </List>
-          </Collapse>
-          <ListItemButton>
-        <CustomListIcon>
-          <BookOnlineOutlinedIcon />
-        </CustomListIcon>
-        <ListItemText primary="Tickets" />
-      </ListItemButton>
-      <ListItemButton>
-        <CustomListIcon>
-          <DescriptionOutlinedIcon />
-        </CustomListIcon>
-        <ListItemText primary="Invoices" />
-      </ListItemButton>
-      <ListItemButton>
-        <CustomListIcon>
-          <AirplaneTicketOutlinedIcon />
-        </CustomListIcon>
-        <ListItemText primary="Bookings" />
-      </ListItemButton>
-      <ListItemButton>
-        <CustomListIcon>
-          <EmojiTransportationOutlinedIcon />
-        </CustomListIcon>
-        <ListItemText primary="GatePass" />
-      </ListItemButton>
-      <ListItemButton>
-        <CustomListIcon>
-          <PrintOutlinedIcon />
-        </CustomListIcon>
-        <ListItemText primary="PrintRequest" />
-      </ListItemButton>
-      <ListItemButton>
-        <CustomListIcon>
-          <DonutSmallOutlinedIcon />
-        </CustomListIcon>
-        <ListItemText primary="Expansion/Downsize" />
-      </ListItemButton>
+        </Collapse>
+        <ListItemButton
+          onClick={() => handleListItemClick(2)}
+          style={{
+            backgroundColor: selectedIndex === 2 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+          }}
+        >
+          <CustomListIcon>
+            <BookOnlineOutlinedIcon />
+          </CustomListIcon>
+          <ListItemText primary="Tickets" />
+        </ListItemButton>
+        <ListItemButton
+          onClick={() => handleListItemClick(3)}
+          style={{
+            backgroundColor: selectedIndex === 3 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+          }}
+        >
+          <CustomListIcon>
+            <DescriptionOutlinedIcon />
+          </CustomListIcon>
+          <ListItemText primary="Invoices" />
+        </ListItemButton>
+        <ListItemButton
+          onClick={() => handleListItemClick(4)}
+          style={{
+            backgroundColor: selectedIndex === 4 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+          }}
+        >
+          <CustomListIcon>
+            <AirplaneTicketOutlinedIcon />
+          </CustomListIcon>
+          <ListItemText primary="Bookings" />
+        </ListItemButton>
+        <ListItemButton
+          onClick={() => handleListItemClick(5)}
+          style={{
+            backgroundColor: selectedIndex === 5 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+          }}
+        >
+          <CustomListIcon>
+            <EmojiTransportationOutlinedIcon />
+          </CustomListIcon>
+          <ListItemText primary="GatePass" />
+        </ListItemButton>
+        <ListItemButton
+          onClick={() => handleListItemClick(6)}
+          style={{
+            backgroundColor: selectedIndex === 6 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+          }}
+        >
+          <CustomListIcon>
+            <PrintOutlinedIcon />
+          </CustomListIcon>
+          <ListItemText primary="PrintRequest" />
+        </ListItemButton>
+        <ListItemButton
+          onClick={() => handleListItemClick(7)}
+          style={{
+            backgroundColor: selectedIndex === 7 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+          }}
+        >
+          <CustomListIcon>
+            <DonutSmallOutlinedIcon />
+          </CustomListIcon>
+          <ListItemText primary="Expansion/Downsize" />
+        </ListItemButton>
+      </List>
+      <Box width="100%">
+        <h5 style={{ marginLeft: "15px", marginTop: "15px" }}>UPCOMING</h5>
+        <List>
+          <ListItemButton
+            onClick={() => handleListItemClick(8)}
+            style={{
+              backgroundColor: selectedIndex === 8 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+            }}
+          >
+            <CustomListIcon>
+              <LocalParkingRoundedIcon />
+            </CustomListIcon>
+            <ListItemText primary="Visitor Parking Pass" />
+          </ListItemButton>
         </List>
-        <Box  width="100%" >
-            <h5 style={{marginLeft:"15px", marginTop:"15px"}}>UPCOMING</h5>
-            <List>
-            <ListItemButton>
-        <CustomListIcon>
-          <LocalParkingRoundedIcon />
-        </CustomListIcon>
-        <ListItemText primary="Visitor Parking Pass" />
-      </ListItemButton>
-            </List>
-        </Box>
-   </Box>
-   
+      </Box>
+    </Box>
   );
 }
