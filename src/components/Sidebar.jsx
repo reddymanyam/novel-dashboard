@@ -92,7 +92,7 @@ export default function Sidebar() {
              <ListItemButton
              onClick={() => handleListItemClick(lst.id)}
              style={{
-               backgroundColor: selectedIndex === lst.id ? '#5d87ff' : 'transparent', borderRadius:"10px"
+               backgroundColor: selectedIndex === lst.id ? '#5d87ff' : 'transparent',borderRadius:"10px"
              }}
            >
              <CustomListIcon>
