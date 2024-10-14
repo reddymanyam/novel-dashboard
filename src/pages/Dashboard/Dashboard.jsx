@@ -57,6 +57,13 @@ const CustomBox = styled(Box)({
   bottom:"40px",
   left:"40px"
 })
+
+const CustomTypography = styled(Typography)({
+   variant:"h6",
+   component:"h2",
+   fontSize:"0.9rem"
+})
+
 export default function Dashboard() {
 
 
@@ -88,8 +95,8 @@ export default function Dashboard() {
             <CustomItem>
               <CustomImage1 src={adugodi} alt='person' />
               <CustomBox>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }}>Novel Business Park - Adugodi </Typography>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }} ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</Typography>
+                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
+                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
               </CustomBox>
             </CustomItem>
           </Grid>
@@ -97,8 +104,8 @@ export default function Dashboard() {
             <CustomItem >
               <CustomImage1 src={whitefield} alt='person' />
               <CustomBox>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }}>Novel Business Park - Adugodi </Typography>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }} ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</Typography>
+                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
+                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
               </CustomBox>
             </CustomItem>
           </Grid>
@@ -106,8 +113,8 @@ export default function Dashboard() {
             <CustomItem >
               <CustomImage1 src={mgroad} alt='person' />
               <CustomBox>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }}>Novel Business Park - Adugodi </Typography>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }} ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</Typography>
+                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
+                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
               </CustomBox>
             </CustomItem>
           </Grid>
@@ -115,8 +122,8 @@ export default function Dashboard() {
             <CustomItem >
               <CustomImage1 src={marthalli} alt='person' />
               <CustomBox>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }}>Novel Business Park - Adugodi </Typography>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }} ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</Typography>
+                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
+                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
               </CustomBox>
             </CustomItem>
           </Grid>
@@ -124,8 +131,8 @@ export default function Dashboard() {
             <CustomItem >
               <CustomImage1 src={queensroad} alt='person' />
               <CustomBox>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }}>Novel Business Park - Adugodi </Typography>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }} ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</Typography>
+                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
+                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
               </CustomBox>
             </CustomItem>
           </Grid>
@@ -133,8 +140,8 @@ export default function Dashboard() {
             <CustomItem >
               <CustomImage1 src={kudluroad} alt='person' />
               <CustomBox>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }}>Novel Business Park - Adugodi </Typography>
-                <Typography variant='h6' component="h6" sx={{ fontSize: "0.9rem" }} ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</Typography>
+                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
+                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
               </CustomBox>
             </CustomItem>
           </Grid>
