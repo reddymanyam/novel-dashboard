@@ -65,12 +65,20 @@ const CustomTypography = styled(Typography)({
 })
 
 export default function Dashboard() {
-
+   
+  const locations = [
+    { id: 1, image: adugodi, title: 'Novel Business Park - Adugodi', location: 'Adugodi, Bengaluru' },
+    { id: 2, image: whitefield, title: 'Novel Business Park - Whitefield', location: 'Whitefield, Bengaluru' },
+    { id: 3, image: mgroad, title: 'Novel Business Park - MG Road', location: 'MG Road, Bengaluru' },
+    { id: 4, image: marthalli, title: 'Novel Business Park - Marathahalli', location: 'Marathahalli, Bengaluru' },
+    { id: 5, image: queensroad, title: 'Novel Business Park - Queens Road', location: 'Queens Road, Bengaluru' },
+    { id: 6, image: kudluroad, title: 'Novel Business Park - Kudlu Road', location: 'Kudlu Road, Bengaluru' },
+  ];
 
   return (
     <Stack sx={{ flexGrow: 1, width: "100%", padding: "30px" }}>
       <Grid container spacing={2} >
-        <Grid size={{ xs: 12, md: 12 }} >
+        <Grid size={{ xs: 12, md: 12 }} key={location.id}>
           <Item sx={{ bgcolor: "#e8f6ff", height: "60px", display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
             <CustomImage src={profilepic} alt='profilepic' />
             <Typography variant="h6" component="h2" color='black'>Welcome Sample</Typography>
@@ -91,60 +99,17 @@ export default function Dashboard() {
 
       <Stack width="100%">
         <Grid container spacing={2} >
+          {locations.map((location)=> (
           <Grid size={{ xs: 6, md: 4 }} >
             <CustomItem>
-              <CustomImage1 src={adugodi} alt='person' />
+              <CustomImage1 src={location.image} alt='person' />
               <CustomBox>
-                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
-                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
+                <CustomTypography>{location.title}</CustomTypography>
+                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> {location.location}</CustomTypography>
               </CustomBox>
             </CustomItem>
           </Grid>
-          <Grid size={{ xs: 6, md: 4 }} >
-            <CustomItem >
-              <CustomImage1 src={whitefield} alt='person' />
-              <CustomBox>
-                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
-                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
-              </CustomBox>
-            </CustomItem>
-          </Grid>
-          <Grid size={{ xs: 6, md: 4 }} >
-            <CustomItem >
-              <CustomImage1 src={mgroad} alt='person' />
-              <CustomBox>
-                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
-                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
-              </CustomBox>
-            </CustomItem>
-          </Grid>
-          <Grid size={{ xs: 6, md: 4 }} >
-            <CustomItem >
-              <CustomImage1 src={marthalli} alt='person' />
-              <CustomBox>
-                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
-                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
-              </CustomBox>
-            </CustomItem>
-          </Grid>
-          <Grid size={{ xs: 6, md: 4 }} >
-            <CustomItem >
-              <CustomImage1 src={queensroad} alt='person' />
-              <CustomBox>
-                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
-                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
-              </CustomBox>
-            </CustomItem>
-          </Grid>
-          <Grid size={{ xs: 6, md: 4 }} >
-            <CustomItem >
-              <CustomImage1 src={kudluroad} alt='person' />
-              <CustomBox>
-                <CustomTypography>Novel Business Park - Adugodi </CustomTypography>
-                <CustomTypography ><LocationOnOutlinedIcon sx={{ fontSize: "1rem" }} /> Adugodi, Bangaluru</CustomTypography>
-              </CustomBox>
-            </CustomItem>
-          </Grid>
+            ))}
         </Grid>
       </Stack >
       <Typography variant='h6' component="h2" > Events</Typography>

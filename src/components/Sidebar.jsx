@@ -44,6 +44,15 @@ export default function Sidebar() {
     setSelectedIndex(index);
   };
   
+  const Lists = [
+    {id:2, title:"Tickets", icon: <BookOnlineOutlinedIcon /> },
+    {id:3, title:"Invoices", icon: <DescriptionOutlinedIcon /> },
+    {id:4, title:"Bookings", icon: <AirplaneTicketOutlinedIcon /> },
+    {id:5, title:"GatePass", icon: <PrintOutlinedIcon /> },
+    {id:6, title:"PrintRequest", icon: <EmojiTransportationOutlinedIcon /> },
+    {id:7, title:"Expansion/Downsize", icon: <DonutSmallOutlinedIcon /> },
+
+  ]
   return (
  
     <Box width="100%" padding="10px" overflowY="scroll">
@@ -79,72 +88,18 @@ export default function Sidebar() {
             </ListItemButton>
           </List>
         </Collapse>
-        <ListItemButton
-          onClick={() => handleListItemClick(2)}
-          style={{
-            backgroundColor: selectedIndex === 2 ? '#5d87ff' : 'transparent', borderRadius:"10px"
-          }}
-        >
-          <CustomListIcon>
-            <BookOnlineOutlinedIcon />
-          </CustomListIcon>
-          <ListItemText primary="Tickets" />
-        </ListItemButton>
-        <ListItemButton
-          onClick={() => handleListItemClick(3)}
-          style={{
-            backgroundColor: selectedIndex === 3 ? '#5d87ff' : 'transparent', borderRadius:"10px"
-          }}
-        >
-          <CustomListIcon>
-            <DescriptionOutlinedIcon />
-          </CustomListIcon>
-          <ListItemText primary="Invoices" />
-        </ListItemButton>
-        <ListItemButton
-          onClick={() => handleListItemClick(4)}
-          style={{
-            backgroundColor: selectedIndex === 4 ? '#5d87ff' : 'transparent', borderRadius:"10px"
-          }}
-        >
-          <CustomListIcon>
-            <AirplaneTicketOutlinedIcon />
-          </CustomListIcon>
-          <ListItemText primary="Bookings" />
-        </ListItemButton>
-        <ListItemButton
-          onClick={() => handleListItemClick(5)}
-          style={{
-            backgroundColor: selectedIndex === 5 ? '#5d87ff' : 'transparent', borderRadius:"10px"
-          }}
-        >
-          <CustomListIcon>
-            <EmojiTransportationOutlinedIcon />
-          </CustomListIcon>
-          <ListItemText primary="GatePass" />
-        </ListItemButton>
-        <ListItemButton
-          onClick={() => handleListItemClick(6)}
-          style={{
-            backgroundColor: selectedIndex === 6 ? '#5d87ff' : 'transparent', borderRadius:"10px"
-          }}
-        >
-          <CustomListIcon>
-            <PrintOutlinedIcon />
-          </CustomListIcon>
-          <ListItemText primary="PrintRequest" />
-        </ListItemButton>
-        <ListItemButton
-          onClick={() => handleListItemClick(7)}
-          style={{
-            backgroundColor: selectedIndex === 7 ? '#5d87ff' : 'transparent', borderRadius:"10px"
-          }}
-        >
-          <CustomListIcon>
-            <DonutSmallOutlinedIcon />
-          </CustomListIcon>
-          <ListItemText primary="Expansion/Downsize" />
-        </ListItemButton>
+        {Lists.map((lst)=>(
+             <ListItemButton
+             onClick={() => handleListItemClick(lst.id)}
+             style={{
+               backgroundColor: selectedIndex === lst.id ? '#5d87ff' : 'transparent', borderRadius:"10px"
+             }}
+           >
+             <CustomListIcon>
+               {lst.icon}
+             </CustomListIcon>
+             <ListItemText primary={lst.title} />
+           </ListItemButton>  ))}
       </List>
       <Box width="100%">
         <h5 style={{ marginLeft: "15px", marginTop: "15px" }}>UPCOMING</h5>
