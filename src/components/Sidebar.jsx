@@ -19,6 +19,7 @@ import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import logo from '../assets/novellogo.jpeg';
 import LocalParkingRoundedIcon from '@mui/icons-material/LocalParkingRounded';
+import { Link } from 'react-router-dom';
 
 const CustomListIcon = styled(ListItemIcon)({
   minWidth: "40px"
@@ -55,7 +56,9 @@ export default function Sidebar() {
         component="nav"
         aria-labelledby="nested-list-subheader"
       >
-        <ListItemButton onClick={handleClick}>
+        <ListItemButton
+        component={Link} to="/dashboard"
+         onClick={handleClick}>
           <CustomListIcon >
             <DashboardOutlinedIcon />
           </CustomListIcon>
@@ -84,7 +87,7 @@ export default function Sidebar() {
             backgroundColor: selectedIndex === 2 ? '#5d87ff' : 'transparent', borderRadius:"10px"
           }}
         >
-          <CustomListIcon>
+          <CustomListIcon >
             <BookOnlineOutlinedIcon />
           </CustomListIcon>
           <ListItemText primary="Tickets" />
@@ -101,6 +104,7 @@ export default function Sidebar() {
           <ListItemText primary="Invoices" />
         </ListItemButton>
         <ListItemButton
+          component={Link} to="/bookings"
           onClick={() => handleListItemClick(4)}
           style={{
             backgroundColor: selectedIndex === 4 ? '#5d87ff' : 'transparent', borderRadius:"10px"
