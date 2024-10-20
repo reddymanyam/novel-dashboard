@@ -44,9 +44,19 @@ export default function Sidebar() {
   const handleListItemClick = (index) => {
     setSelectedIndex(index);
   };
+  
+  const Lists = [
+    {id:2, title:"Tickets", icon: <BookOnlineOutlinedIcon /> },
+    {id:3, title:"Invoices", icon: <DescriptionOutlinedIcon /> },
+    {id:4, title:"Bookings", icon: <AirplaneTicketOutlinedIcon /> },
+    {id:5, title:"GatePass", icon: <PrintOutlinedIcon /> },
+    {id:6, title:"PrintRequest", icon: <EmojiTransportationOutlinedIcon /> },
+    {id:7, title:"Expansion/Downsize", icon: <DonutSmallOutlinedIcon /> },
 
+  ]
   return (
-    <Box width="100%" padding="10px" overflowx="scroll">
+ 
+    <Box width="100%" padding="10px" overflowY="scroll">
       <Box display="flex" justifyContent="space-between" alignItems="center" padding="5px">
         <CustomImage src={logo} alt='novel logo' />
         <Typography variant="h6" component="h2" fontWeight="bold"> NOVEL OFFICE</Typography>
@@ -87,7 +97,7 @@ export default function Sidebar() {
             backgroundColor: selectedIndex === 2 ? '#5d87ff' : 'transparent', borderRadius:"10px"
           }}
         >
-          <CustomListIcon >
+          <CustomListIcon>
             <BookOnlineOutlinedIcon />
           </CustomListIcon>
           <ListItemText primary="Tickets" />
@@ -104,7 +114,6 @@ export default function Sidebar() {
           <ListItemText primary="Invoices" />
         </ListItemButton>
         <ListItemButton
-          component={Link} to="/bookings"
           onClick={() => handleListItemClick(4)}
           style={{
             backgroundColor: selectedIndex === 4 ? '#5d87ff' : 'transparent', borderRadius:"10px"
