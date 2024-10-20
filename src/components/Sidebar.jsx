@@ -44,31 +44,37 @@ export default function Sidebar() {
   const handleListItemClick = (index) => {
     setSelectedIndex(index);
   };
-  
+
   const Lists = [
-    {id:2, title:"Tickets", icon: <BookOnlineOutlinedIcon /> },
-    {id:3, title:"Invoices", icon: <DescriptionOutlinedIcon /> },
-    {id:4, title:"Bookings", icon: <AirplaneTicketOutlinedIcon /> },
-    {id:5, title:"GatePass", icon: <PrintOutlinedIcon /> },
-    {id:6, title:"PrintRequest", icon: <EmojiTransportationOutlinedIcon /> },
-    {id:7, title:"Expansion/Downsize", icon: <DonutSmallOutlinedIcon /> },
+    { id: 2, title: "Tickets", icon: <BookOnlineOutlinedIcon /> },
+    { id: 3, title: "Invoices", icon: <DescriptionOutlinedIcon /> },
+    { id: 4, title: "Bookings", icon: <AirplaneTicketOutlinedIcon /> },
+    { id: 5, title: "GatePass", icon: <PrintOutlinedIcon /> },
+    { id: 6, title: "PrintRequest", icon: <EmojiTransportationOutlinedIcon /> },
+    { id: 7, title: "Expansion/Downsize", icon: <DonutSmallOutlinedIcon /> },
 
   ]
   return (
- 
+
     <Box width="100%" padding="10px" overflowY="scroll">
       <Box display="flex" justifyContent="space-between" alignItems="center" padding="5px">
         <CustomImage src={logo} alt='novel logo' />
         <Typography variant="h6" component="h2" fontWeight="bold"> NOVEL OFFICE</Typography>
       </Box>
       <List
-        sx={{ width: '100%' ,marginLeft:"10px"}}
+        sx={{ width: '100%', marginLeft: "10px" }}
         component="nav"
         aria-labelledby="nested-list-subheader"
       >
         <ListItemButton
-        component={Link} to="/dashboard"
-         onClick={handleClick}>
+          component={Link} to="/dashboard"
+          onClick={() => {
+            handleListItemClick(0);
+            handleClick();
+          }}
+          style={{
+            backgroundColor: selectedIndex === 0 ? '#5d87ff' : 'transparent', borderRadius: "10px"
+          }} >
           <CustomListIcon >
             <DashboardOutlinedIcon />
           </CustomListIcon>
@@ -81,7 +87,7 @@ export default function Sidebar() {
               sx={{ pl: 4 }}
               onClick={() => handleListItemClick(1)}
               style={{
-                backgroundColor: selectedIndex === 1 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+                backgroundColor: selectedIndex === 1 ? '#5d87ff' : 'transparent', borderRadius: "10px"
               }}
             >
               <CustomListIcon>
@@ -92,10 +98,10 @@ export default function Sidebar() {
           </List>
         </Collapse>
         <ListItemButton
-        component={Link} to="/tickets"
+          component={Link} to="/tickets"
           onClick={() => handleListItemClick(2)}
           style={{
-            backgroundColor: selectedIndex === 2 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+            backgroundColor: selectedIndex === 2 ? '#5d87ff' : 'transparent', borderRadius: "10px"
           }}
         >
           <CustomListIcon>
@@ -104,10 +110,10 @@ export default function Sidebar() {
           <ListItemText primary="Tickets" />
         </ListItemButton>
         <ListItemButton
-        component={Link} to="/invoices"
+          component={Link} to="/invoices"
           onClick={() => handleListItemClick(3)}
           style={{
-            backgroundColor: selectedIndex === 3 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+            backgroundColor: selectedIndex === 3 ? '#5d87ff' : 'transparent', borderRadius: "10px"
           }}
         >
           <CustomListIcon>
@@ -116,10 +122,10 @@ export default function Sidebar() {
           <ListItemText primary="Invoices" />
         </ListItemButton>
         <ListItemButton
-        component={Link} to="/bookings"
+          component={Link} to="/bookings"
           onClick={() => handleListItemClick(4)}
           style={{
-            backgroundColor: selectedIndex === 4 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+            backgroundColor: selectedIndex === 4 ? '#5d87ff' : 'transparent', borderRadius: "10px"
           }}
         >
           <CustomListIcon>
@@ -128,10 +134,10 @@ export default function Sidebar() {
           <ListItemText primary="Bookings" />
         </ListItemButton>
         <ListItemButton
-        component={Link} to="/gatepass"
+          component={Link} to="/gatepass"
           onClick={() => handleListItemClick(5)}
           style={{
-            backgroundColor: selectedIndex === 5 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+            backgroundColor: selectedIndex === 5 ? '#5d87ff' : 'transparent', borderRadius: "10px"
           }}
         >
           <CustomListIcon>
@@ -140,10 +146,10 @@ export default function Sidebar() {
           <ListItemText primary="GatePass" />
         </ListItemButton>
         <ListItemButton
-        component={Link} to="/printrequest"
+          component={Link} to="/printrequest"
           onClick={() => handleListItemClick(6)}
           style={{
-            backgroundColor: selectedIndex === 6 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+            backgroundColor: selectedIndex === 6 ? '#5d87ff' : 'transparent', borderRadius: "10px"
           }}
         >
           <CustomListIcon>
@@ -152,10 +158,10 @@ export default function Sidebar() {
           <ListItemText primary="PrintRequest" />
         </ListItemButton>
         <ListItemButton
-        component={Link} to="/expansion"
+          component={Link} to="/expansion"
           onClick={() => handleListItemClick(7)}
           style={{
-            backgroundColor: selectedIndex === 7 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+            backgroundColor: selectedIndex === 7 ? '#5d87ff' : 'transparent', borderRadius: "10px"
           }}
         >
           <CustomListIcon>
@@ -168,10 +174,10 @@ export default function Sidebar() {
         <h5 style={{ marginLeft: "15px", marginTop: "15px" }}>UPCOMING</h5>
         <List>
           <ListItemButton
-          component={Link} to="/gatepass"
+            component={Link} to="/gatepass"
             onClick={() => handleListItemClick(8)}
             style={{
-              backgroundColor: selectedIndex === 8 ? '#5d87ff' : 'transparent', borderRadius:"10px"
+              backgroundColor: selectedIndex === 8 ? '#5d87ff' : 'transparent', borderRadius: "10px"
             }}
           >
             <CustomListIcon>

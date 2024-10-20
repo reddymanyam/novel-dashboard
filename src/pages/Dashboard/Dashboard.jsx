@@ -138,7 +138,7 @@ export default function Dashboard() {
           </Grid>
             ))}
         </Grid>
-      </Stack >
+      </Stack>
       <Typography variant='h6' component="h2" > Events</Typography>
       <Stack >
         <Grid container spacing={2} marginBottom={3}>
