@@ -8,3 +8,6 @@
 .css-1xmum9n-MuiPaper-root {
     padding: 0 !important;
 }
+*, *::before, *::after{
+    box-sizing: content-box !important;
+}

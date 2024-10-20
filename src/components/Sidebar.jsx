@@ -92,6 +92,7 @@ export default function Sidebar() {
           </List>
         </Collapse>
         <ListItemButton
+        component={Link} to="/tickets"
           onClick={() => handleListItemClick(2)}
           style={{
             backgroundColor: selectedIndex === 2 ? '#5d87ff' : 'transparent', borderRadius:"10px"
@@ -103,6 +104,7 @@ export default function Sidebar() {
           <ListItemText primary="Tickets" />
         </ListItemButton>
         <ListItemButton
+        component={Link} to="/invoices"
           onClick={() => handleListItemClick(3)}
           style={{
             backgroundColor: selectedIndex === 3 ? '#5d87ff' : 'transparent', borderRadius:"10px"
@@ -114,6 +116,7 @@ export default function Sidebar() {
           <ListItemText primary="Invoices" />
         </ListItemButton>
         <ListItemButton
+        component={Link} to="/bookings"
           onClick={() => handleListItemClick(4)}
           style={{
             backgroundColor: selectedIndex === 4 ? '#5d87ff' : 'transparent', borderRadius:"10px"
@@ -125,6 +128,7 @@ export default function Sidebar() {
           <ListItemText primary="Bookings" />
         </ListItemButton>
         <ListItemButton
+        component={Link} to="/gatepass"
           onClick={() => handleListItemClick(5)}
           style={{
             backgroundColor: selectedIndex === 5 ? '#5d87ff' : 'transparent', borderRadius:"10px"
@@ -136,6 +140,7 @@ export default function Sidebar() {
           <ListItemText primary="GatePass" />
         </ListItemButton>
         <ListItemButton
+        component={Link} to="/printrequest"
           onClick={() => handleListItemClick(6)}
           style={{
             backgroundColor: selectedIndex === 6 ? '#5d87ff' : 'transparent', borderRadius:"10px"
@@ -147,6 +152,7 @@ export default function Sidebar() {
           <ListItemText primary="PrintRequest" />
         </ListItemButton>
         <ListItemButton
+        component={Link} to="/expansion"
           onClick={() => handleListItemClick(7)}
           style={{
             backgroundColor: selectedIndex === 7 ? '#5d87ff' : 'transparent', borderRadius:"10px"
@@ -162,6 +168,7 @@ export default function Sidebar() {
         <h5 style={{ marginLeft: "15px", marginTop: "15px" }}>UPCOMING</h5>
         <List>
           <ListItemButton
+          component={Link} to="/gatepass"
             onClick={() => handleListItemClick(8)}
             style={{
               backgroundColor: selectedIndex === 8 ? '#5d87ff' : 'transparent', borderRadius:"10px"
