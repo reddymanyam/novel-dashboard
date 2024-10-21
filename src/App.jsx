@@ -9,7 +9,7 @@ const App = () => {
   // const routing = useRoutes(Routes);
   return (
    <>
-   <Layout/>
+   <Layout />
    </>
   )
 }
