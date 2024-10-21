@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import { Box } from '@mui/material'
-import Dashboard from '../pages/Dashboard/Dashboard'
 
 const Layout = () => {
   return (
@@ -16,7 +15,7 @@ const Layout = () => {
                 <Sidebar />
             </Box>
             <Box display='flex' justifyContent="center" aliginItems="center" overflow="auto" width='calc(100% - 210px)' height="calc(100% - 50px)"  padding="30px"  marginLeft="210px" top="35px" >
-                <Dashboard />
+                <Outlet />
             </Box>
         </Box>
     </>
