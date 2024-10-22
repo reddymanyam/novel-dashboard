@@ -6,8 +6,11 @@ import Expansion from '../pages/Expansion/Expansion';
 import Tickets from '../pages/Tickets/Tickets';
 import GatePass from '../pages/GatePass/GatePass';
 import PrintRequest from '../pages/PrintRequest/printRequest';
+import Auth from '../pages/Auth/Auth';
 
 const router = [
+  {path:"/", element:<Auth />},
+  
   {
     path: "/",
     element: <Layout />,

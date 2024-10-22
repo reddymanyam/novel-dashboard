@@ -116,6 +116,8 @@ export default function Auth() {
                 navigate("/dashboard");
             } else {
                 alert('Invalid email or password.');
+
+
             }
         } catch (err) {
             console.error(err);
