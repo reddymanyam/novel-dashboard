@@ -1,3 +1,17 @@
+import React, { Suspense } from 'react';
+
+const Dashboard = React.lazy(() => import('../pages/Dashboard/Dashboard'));
+const Layout = React.lazy(() => import('../components/Layout'));
+const Bookings = React.lazy(() => import("../pages/Bookings/Bookings"));
+const Invoices = React.lazy(() => import("../pages/Invoices/Invoices"));
+const Expansion = React.lazy(() => import("../pages/Expansion/Expansion"));
+const Tickets = React.lazy(() => import("../pages/Tickets/Tickets"));
+const GatePass = React.lazy(() => import("../pages/GatePass/GatePass"));
+const PrintRequest = React.lazy(() => import('../pages/PrintRequest/printRequest'));
+
+
+/* 
+ 
 import Dashboard from '../pages/Dashboard/Dashboard';
 import Layout from '../components/Layout'; 
 import Bookings from '../pages/Bookings/Bookings';
@@ -5,40 +19,54 @@ import Invoices from '../pages/Invoices/Invoices';
 import Expansion from '../pages/Expansion/Expansion';
 import Tickets from '../pages/Tickets/Tickets';
 import GatePass from '../pages/GatePass/GatePass';
-import PrintRequest from '../pages/PrintRequest/printRequest';
+import PrintRequest from '../pages/PrintRequest/printRequest'; 
+
+*/
 
 const router = [
   {
     path: "/",
-    element: <Layout />,
+    element: (<Suspense fallback={<h1>Loading....</h1>}>
+      <Layout />
+    </Suspense>),
     children: [
       {
         path: "dashboard",
-        element: <Dashboard /> 
+        element: (<Suspense fallback={<h1>Loading....</h1>}>
+          <Dashboard />
+        </Suspense>)
       },
       {
         path: "bookings",
-        element: <Bookings /> 
+        element:( <Suspense fallback={<h1>Loading....</h1>}>
+<Bookings />
+        </Suspense> )
       },
       {
         path: "expansion",
-        element: <Expansion /> 
+        element:( <Suspense>
+<Expansion />
+        </Suspense>) 
       },
       {
         path: "invoices",
-        element: <Invoices /> 
+        element:(<Suspense fallback={<h1>Loading...</h1>}>
+ <Invoices />
+        </Suspense> )
       },
       {
         path: "gatepass",
-        element: <GatePass /> 
+        element:(<Suspense fallback={<h1>Loading.....</h1>}>
+<GatePass />
+        </Suspense>) 
       },
       {
         path: "tickets",
-        element: <Tickets /> 
+        element:(<Suspense fallback={<h1>Loading....</h1>}><Tickets /></Suspense>) 
       },
       {
         path: "printrequest",
-        element: <PrintRequest /> 
+        element:(<Suspense fallback={<h1>Loading....</h1>}><PrintRequest /></Suspense>) 
       }
     ]
   }
