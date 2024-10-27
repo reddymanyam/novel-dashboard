@@ -19,11 +19,11 @@ import Invoices from '../pages/Invoices/Invoices';
 import Expansion from '../pages/Expansion/Expansion';
 import Tickets from '../pages/Tickets/Tickets';
 import GatePass from '../pages/GatePass/GatePass';
-import PrintRequest from '../pages/PrintRequest/printRequest'; 
-
-*/
+import PrintRequest from '../pages/PrintRequest/printRequest';
 
 const router = [
+  {path:"/", element:<Auth />},
+  
   {
     path: "/",
     element: (<Suspense fallback={<h1>Loading....</h1>}>

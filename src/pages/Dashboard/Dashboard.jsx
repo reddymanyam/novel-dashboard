@@ -75,10 +75,12 @@ export default function Dashboard() {
       mode: mode,
       ...(mode === 'light' ? {
         background: { paper: '#fff' },
-        text: { primary: '#000', secondary: '#555' }
+        text: { primary: '#000', secondary: '#555' },
+        icons:{ primary: '#000', secondary: '#555' }
       } : {
         background: { paper: '#1A2027' },
-        text: { primary: '#fff', secondary: '#bbb' }
+        text: { primary: '#fff', secondary: '#bbb' },
+        icons:{primary: '#fff', secondary: '#bbb' }
       }),
     },
   });
@@ -95,7 +97,8 @@ export default function Dashboard() {
     { id: 5, image: queensroad, title: 'Novel Business Park - Queens Road', location: 'Queens Road, Bengaluru' },
     { id: 6, image: kudluroad, title: 'Novel Business Park - Kudlu Road', location: 'Kudlu Road, Bengaluru' },
   ];
-
+  
+  
   return (
     <ThemeProvider theme={theme}>
        <CssBaseline />

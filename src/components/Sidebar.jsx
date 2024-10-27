@@ -59,7 +59,7 @@ export default function Sidebar() {
     <Box width="100%" padding="10px" overflowY="scroll">
       <Box display="flex" justifyContent="space-between" alignItems="center" padding="5px">
         <CustomImage src={logo} alt='novel logo' />
-        <Typography variant="h6" component="h2" fontWeight="bold"> NOVEL OFFICE</Typography>
+        <Typography variant="h6" component="h2" fontWeight="bold">NOVELOFFICE</Typography>
       </Box>
       <List
         sx={{ width: '100%', marginLeft: "10px" }}
