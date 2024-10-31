@@ -21,13 +21,13 @@ import Tickets from '../pages/Tickets/Tickets';
 import GatePass from '../pages/GatePass/GatePass';
 import PrintRequest from '../pages/PrintRequest/printRequest'; */
 
-const router = [
+const router = (toggletheme, mode) => [
   {path:"/", element:<Auth />},
   
   {
     path: "/",
     element: (<Suspense fallback={<h1>Loading....</h1>}>
-      <Layout />
+      <Layout toggletheme={toggletheme}  mode={mode} />
     </Suspense>),
     children: [
       {

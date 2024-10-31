@@ -6,6 +6,8 @@ import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsAc
 import profilepic from '../assets/profile_icon.png';
 import styled from '@emotion/styled';
 import { IconButton } from '@mui/material';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 const CustomImage = styled('img')({
   width:'30px',

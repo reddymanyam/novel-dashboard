@@ -16,8 +16,7 @@ import kudluroad from '../../assets/Frame 1000002926.png';
 import img1 from '../../assets/img.png';
 import img2 from '../../assets/img (1).png';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+
 
 
 const Item = styled(Paper)(({ theme }) => ({
