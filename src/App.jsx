@@ -6,7 +6,7 @@ import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 
 const App = () => {
   const [mode, setMode] = React.useState('light');
-
+  
   const theme = createTheme({
     palette: {
       mode: mode,
@@ -27,6 +27,7 @@ const App = () => {
   };
 
   const routing = useRoutes(router(toggleTheme, mode));
+
   return (
 
     <>
