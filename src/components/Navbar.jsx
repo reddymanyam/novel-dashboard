@@ -5,6 +5,7 @@ import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
 import profilepic from '../assets/profile_icon.png';
 import styled from '@emotion/styled';
+import { IconButton } from '@mui/material';
 
 const CustomImage = styled('img')({
   width:'30px',
@@ -19,6 +20,9 @@ const Navbar = () => {
    <Box width="100%" display='flex' justifyContent="space-between" alignItems="center" padding="10px 20px">
        <ReorderIcon />
        <Box display="flex" justifyContent="flex-end" alignItems="center">
+       <IconButton onClick={toggleTheme} >
+          {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+        </IconButton>
         <HelpOutlineOutlinedIcon  sx={{marginRight:"15px"}}/>
         <NotificationsActiveOutlinedIcon sx={{marginRight:"15px"}} />
         <CustomImage src={profilepic} alt='profilepc' />

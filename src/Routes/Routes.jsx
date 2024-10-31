@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-
+import Auth from '../pages/Auth/Auth';
 const Dashboard = React.lazy(() => import('../pages/Dashboard/Dashboard'));
 const Layout = React.lazy(() => import('../components/Layout'));
 const Bookings = React.lazy(() => import("../pages/Bookings/Bookings"));

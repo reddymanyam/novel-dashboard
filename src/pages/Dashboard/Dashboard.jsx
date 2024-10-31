@@ -16,7 +16,6 @@ import kudluroad from '../../assets/Frame 1000002926.png';
 import img1 from '../../assets/img.png';
 import img2 from '../../assets/img (1).png';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 
@@ -68,27 +67,7 @@ const CustomTypography = styled(Typography)({
 })
 
 export default function Dashboard() {
-  const [mode, setMode] = React.useState('light');
-
-  const theme = createTheme({
-    palette: {
-      mode: mode,
-      ...(mode === 'light' ? {
-        background: { paper: '#fff' },
-        text: { primary: '#000', secondary: '#555' },
-        icons:{ primary: '#000', secondary: '#555' }
-      } : {
-        background: { paper: '#1A2027' },
-        text: { primary: '#fff', secondary: '#bbb' },
-        icons:{primary: '#fff', secondary: '#bbb' }
-      }),
-    },
-  });
-
-  const toggleTheme = () => {
-    setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-  };
-
+ 
   const locations = [
     { id: 1, image: adugodi, title: 'Novel Business Park - Adugodi', location: 'Adugodi, Bengaluru' },
     { id: 2, image: whitefield, title: 'Novel Business Park - Whitefield', location: 'Whitefield, Bengaluru' },
@@ -100,13 +79,9 @@ export default function Dashboard() {
   
   
   return (
-    <ThemeProvider theme={theme}>
-       <CssBaseline />
-       
+    
     <Stack sx={{ flexGrow: 1, width: "100%", padding: "30px" }}>
-    <IconButton onClick={toggleTheme} >
-          {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-        </IconButton>
+   
       <Grid container spacing={2} >
         <Grid size={{ xs: 12, md: 12 }} key={location.id}>
           <Item sx={{ bgcolor: "#e8f6ff", height: "60px", display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
@@ -158,6 +133,6 @@ export default function Dashboard() {
         </Grid>
       </Stack>
     </Stack>
-    </ThemeProvider>
+   
   );
 }
