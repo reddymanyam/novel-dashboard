@@ -21,6 +21,8 @@ import Tickets from '../pages/Tickets/Tickets';
 import GatePass from '../pages/GatePass/GatePass';
 import PrintRequest from '../pages/PrintRequest/printRequest'; */
 
+
+
 const router = (toggleTheme, mode) => [
   { path: "/", element: <Auth /> },
 
