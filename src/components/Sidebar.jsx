@@ -18,7 +18,6 @@ import styled from '@emotion/styled';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import logo from '../assets/novellogo.jpeg';
-import LocalParkingRoundedIcon from '@mui/icons-material/LocalParkingRounded';
 import { Link } from 'react-router-dom';
 
 const CustomListIcon = styled(ListItemIcon)({
@@ -46,17 +45,16 @@ export default function Sidebar() {
   };
 
   const SidebarcompList = [
-    { id: 2, title: "Tickets",  link:"/tickets", icon: <BookOnlineOutlinedIcon /> },
-    { id: 3, title: "Invoices", link:"/invoices", icon: <DescriptionOutlinedIcon /> },
-    { id: 4, title: "Bookings", link:"/bookings", icon: <AirplaneTicketOutlinedIcon /> },
-    { id: 5, title: "GatePass", link:"/gatepass", icon: <PrintOutlinedIcon /> },
-    { id: 6, title: "PrintRequest", link:"/printrequest", icon: <EmojiTransportationOutlinedIcon /> },
-    { id: 7, title: "Expansion/Downsize", link:"/expansion", icon: <DonutSmallOutlinedIcon /> },
+    { id: 2, title: "Tickets", link: "/tickets", icon: <BookOnlineOutlinedIcon /> },
+    { id: 3, title: "Invoices", link: "/invoices", icon: <DescriptionOutlinedIcon /> },
+    { id: 4, title: "Bookings", link: "/bookings", icon: <AirplaneTicketOutlinedIcon /> },
+    { id: 5, title: "GatePass", link: "/gatepass", icon: <PrintOutlinedIcon /> },
+    { id: 6, title: "PrintRequest", link: "/printrequest", icon: <EmojiTransportationOutlinedIcon /> },
+    { id: 7, title: "Expansion/Downsize", link: "/expansion", icon: <DonutSmallOutlinedIcon /> },
+  ];
 
-  ]
   return (
-
-    <Box width="100%" padding="10px" height="100%" overflowY="auto" >
+    <Box width="100%" padding="10px" height="100%" overflowY="auto">
       <Box display="flex" justifyContent="space-between" alignItems="center" padding="5px">
         <CustomImage src={logo} alt='novel logo' />
         <Typography variant="h6" component="h2" fontWeight="bold">NOVELOFFICE</Typography>
@@ -67,30 +65,34 @@ export default function Sidebar() {
         aria-labelledby="nested-list-subheader"
       >
         <ListItemButton
-          component={Link} to="/dashboard"
+          component={Link}
+          to="/dashboard"
           onClick={() => {
             handleListItemClick(0);
             handleClick();
           }}
           style={{
-            backgroundColor: selectedIndex === 0 ? '#5d87ff' : 'transparent', borderRadius: "10px"
-          }} >
-          <CustomListIcon >
+            backgroundColor: selectedIndex === 0 ? '#5d87ff' : 'transparent',
+            borderRadius: "10px"
+          }}
+        >
+          <CustomListIcon>
             <DashboardOutlinedIcon />
           </CustomListIcon>
           <ListItemText primary="Dashboard" />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
+
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             <ListItemButton
               sx={{ pl: 4 }}
               onClick={() => handleListItemClick(1)}
               style={{
-                backgroundColor: selectedIndex === 1 ? '#5d87ff' : 'transparent', borderRadius: "10px"
+                backgroundColor: selectedIndex === 1 ? '#5d87ff' : 'transparent',
+                borderRadius: "10px"
               }}
             >
-          
               <CustomListIcon>
                 <StarBorder />
               </CustomListIcon>
@@ -98,22 +100,25 @@ export default function Sidebar() {
             </ListItemButton>
           </List>
         </Collapse>
-        {SidebarcompList.map((list, i)=>(
-        <ListItemButton
-          component={Link} to={list.link}
-          onClick={() => handleListItemClick(list.id)}
-          style={{
-            backgroundColor: selectedIndex === list.id ? '#5d87ff' : 'transparent', borderRadius: "10px"
-          }}
-        >
-          <CustomListIcon>
-            {list.icon}
-          </CustomListIcon>
-          <ListItemText primary={list.title} />
-        </ListItemButton>
-           ))}
-          
-       </List>
+
+        {SidebarcompList.map((list) => (
+          <ListItemButton
+            key={list.id}
+            component={Link}
+            to={list.link}
+            onClick={() => handleListItemClick(list.id)}
+            style={{
+              backgroundColor: selectedIndex === list.id ? '#5d87ff' : 'transparent',
+              borderRadius: "10px"
+            }}
+          >
+            <CustomListIcon>
+              {list.icon}
+            </CustomListIcon>
+            <ListItemText primary={list.title} />
+          </ListItemButton>
+        ))}
+      </List>
     </Box>
   );
 }
