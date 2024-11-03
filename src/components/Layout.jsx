@@ -4,12 +4,12 @@ import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import { Box } from '@mui/material'
 
-const Layout = ({toggletheme, mode}) => {
+const Layout = ({toggleTheme, mode}) => {
   return (
     <>
         <Box display="flex" width="100%" height="100vh">
             <Box  height="50px" position="fixed" width="calc(100% - 210px)" display='flex' justifyContent="flex-start" marginLeft="210px" top="0">
-                <Navbar toggletheme={toggletheme} mode={mode} />
+                <Navbar toggleTheme={toggleTheme} mode={mode} />
             </Box>
             <Box display='flex' justifyContent="center" aliginItems="center" height="100vh" width="210px" position='fixed' overflowY="scroll" top="0px">
                 <Sidebar />

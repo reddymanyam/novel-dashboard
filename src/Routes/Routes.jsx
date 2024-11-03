@@ -21,13 +21,13 @@ import Tickets from '../pages/Tickets/Tickets';
 import GatePass from '../pages/GatePass/GatePass';
 import PrintRequest from '../pages/PrintRequest/printRequest'; */
 
-const router = (toggletheme, mode) => [
-  {path:"/", element:<Auth />},
-  
+const router = (toggleTheme, mode) => [
+  { path: "/", element: <Auth /> },
+
   {
     path: "/",
     element: (<Suspense fallback={<h1>Loading....</h1>}>
-      <Layout toggletheme={toggletheme}  mode={mode} />
+      <Layout toggleTheme={toggleTheme} mode={mode} />
     </Suspense>),
     children: [
       {
@@ -38,35 +38,35 @@ const router = (toggletheme, mode) => [
       },
       {
         path: "bookings",
-        element:( <Suspense fallback={<h1>Loading....</h1>}>
-<Bookings />
-        </Suspense> )
+        element: (<Suspense fallback={<h1>Loading....</h1>}>
+          <Bookings />
+        </Suspense>)
       },
       {
         path: "expansion",
-        element:( <Suspense>
-<Expansion />
-        </Suspense>) 
+        element: (<Suspense>
+          <Expansion />
+        </Suspense>)
       },
       {
         path: "invoices",
-        element:(<Suspense fallback={<h1>Loading...</h1>}>
- <Invoices />
-        </Suspense> )
+        element: (<Suspense fallback={<h1>Loading...</h1>}>
+          <Invoices />
+        </Suspense>)
       },
       {
         path: "gatepass",
-        element:(<Suspense fallback={<h1>Loading.....</h1>}>
-<GatePass />
-        </Suspense>) 
+        element: (<Suspense fallback={<h1>Loading.....</h1>}>
+          <GatePass />
+        </Suspense>)
       },
       {
         path: "tickets",
-        element:(<Suspense fallback={<h1>Loading....</h1>}><Tickets /></Suspense>) 
+        element: (<Suspense fallback={<h1>Loading....</h1>}><Tickets /></Suspense>)
       },
       {
         path: "printrequest",
-        element:(<Suspense fallback={<h1>Loading....</h1>}><PrintRequest /></Suspense>) 
+        element: (<Suspense fallback={<h1>Loading....</h1>}><PrintRequest /></Suspense>)
       }
     ]
   }
