@@ -55,8 +55,9 @@ const CustomBox = styled(Box)({
   color:"white",
   backgroundColor:"rgba(0, 0, 0, 0.5)",
   borderRadius: "5px",
-  bottom:"40px",
-  left:"40px"
+  bottom:"30%",
+  left:"10%",
+  right:'5%'
 })
 
 const CustomTypography = styled(Typography)({
