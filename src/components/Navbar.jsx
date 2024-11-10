@@ -17,10 +17,10 @@ const CustomImage = styled('img')({
   objectFit:"cover"
 })
 
-const Navbar = ({toggleTheme, mode}) => {
+const Navbar = ({toggleTheme, mode, handleClick}) => {
   return (
    <Box width="100%" display='flex' justifyContent="space-between" alignItems="center" padding="10px 20px">
-       <ReorderIcon />
+       <ReorderIcon onClick={handleClick}/>
        <Box display="flex" justifyContent="flex-end" alignItems="center">
        <IconButton onClick={toggleTheme} >
           {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
